@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .canvast{
+    background-color: rgb(22, 137, 155);
+  }
+</style>
+<body>
+  <canvas id="mycanvas" class="canvast" width="300"height="300"style=" border: solid 1px black"></canvas>
+</body>
+<script>
+  var canvas= document.getElementById("mycanvas");
+  var context= canvas.getContext("2d");
+  var x =100;
+  var y=270;
+  var dx=-3.5;
+  var dy=-2;
+  var radius=5;
+   var paddle= {
+     width:70,
+     height:10,
+     x : 0,
+     y: canvas.height -10,
+     speed : 5,
+     isMovingLeft: false,
+     isMovingRight: false,
+   }
+   var isGameOver = false;
+
+
+   document.addEventListener("keyup",function(event){
+     console.log('KEY UP');
+     console.log(event); 
+      if(event.keyCode == 37 ){
+       paddle.isMovingLeft=false;
+     }
+     if (event.keyCode ==39){
+       paddle.isMovingRight=false;
+     }
+
+   }); 
+   
+
+   document.addEventListener("keydown",function(event){
+     console.log('KEY DOWN');
+     console.log(event);
+     if(event.keyCode == 37 ){
+       paddle.isMovingLeft=true;
+     }
+     if (event.keyCode ==39){
+       paddle.isMovingRight=true;
+     }
+   });
+
+
+   function drawBall() {
+  context.beginPath();
+  context.arc(x,y,radius,0,2* Math.PI);
+  context.fillStyle="red"
+  context.fill();
+  context.closePath();
+   }
+   function drawPaddle(){
+     context.beginPath();
+     context.rect(paddle.x,paddle.y,paddle.width,paddle.height);
+     context.fill();
+     context.closePath();
+
+   }
+   function handorats(){
+     if ( x + radius >= paddle.x &&x+radius <= paddle.x + paddle.width && y+radius >= canvas.height-paddle.height){
+       dy =-dy;
+     }
+   }
+   
+  //  drawBall();
+  //  setInterval(function() {  
+  //    context.clearRect(0,0,canvas.width,canvas.height); 
+
+  //      drawBall(); 
+  //      x +=5;
+  //      y +=5;
+  //   },100);
+       function handora(){
+        if( x < 0 || x>295 ){
+              dx = -dx;
+            };
+            if( y < 0 ){
+              dy = -dy;
+            }
+       }
+        function update(){
+          x +=dx;
+            y +=dy;
+
+        }
+        function handorats(){
+          
+        }
+      function draw(){
+           if(!isGameOver){
+            context.clearRect(0,0,canvas.width,canvas.height); 
+
+            drawPaddle();
+            drawBall();
+            if(paddle.isMovingLeft){
+              paddle.x-=paddle.speed;
+            } else if(paddle.isMovingRight){
+              paddle.x+=paddle.speed;
+            }
+
+            if(paddle.x<0){
+              paddle.x =0;
+            }else if(paddle.x>canvas.width-paddle.width) {
+              paddle.x =canvas.width-paddle.width;
+            }
+             handora();
+             handorats();
+             update();
+             if(y>295){
+               isGameOver = true;
+             }
+            requestAnimationFrame(draw);
+      } else{
+        alert("game over")
+      }
+
+    }
+
+      draw();
+    
+
+
+
+</script>
+</html>

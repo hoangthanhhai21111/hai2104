@@ -1,0 +1,96 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hứng Bóng</title>
+</head>
+<body>
+    <div></div>
+    <canvas id="Mycanvas" width="300" height="600"style=" 400px; border: solid 1px black">
+       <table id="so"></table>
+    </canvas>
+</body>
+<script >
+  var canvas = document.getElementById("Mycanvas");
+  var context = canvas.getContext("2d");
+
+
+  
+    nhanvat={
+        x:100, y:560
+    };
+
+  // di chuyển
+  setInterval(start,100);
+  function start(){
+    context.clearRect(0,0,300,600); //di chuyển lên trên
+      // vẽ hình
+     context.fillstyle ="red";
+     context.fillRect(nhanvat.x,nhanvat.y,50,10);
+
+  }
+    // va chạm
+  //   function vacham() {
+  //     if(nhanvat.x <= 0 || nhanvat.x + 25 >= 300 || nhanvat.y <= 0 || nhanvat.y + 25 >= 500) {
+  //         document.write("thua");  
+  //     }
+  // }
+  document.addEventListener("keydown",key => {
+      switch (key.keyCode) {
+          case 37:
+            if(nhanvat.x > 0)
+              nhanvat.x -= 5;
+              break;
+          case 39:
+            if(nhanvat.x  + 50 < 300)
+              nhanvat.x += 5;  
+              break;
+            
+      }
+  });
+  // function brick(){
+  //   for(var i = 0; i <3; i++){
+  //     for(var j = 0; j <3;j++){
+  //       context.beginPath();
+  //       context.rect(
+  //         25+ j *(70+25),
+  //        25 + i * (25 *25),
+  //        70,15
+
+  //       ); context.fillstyle="red";
+  //         context.closePath();
+  //     }
+  //   }
+  // }
+  chamtron={
+    x:120, y:0,
+    dx:10, dy: 5
+  }
+  setInterval(starts,100);
+  function starts() {
+    context.fillstyle="red";
+    context.fillRect(chamtron.x,chamtron.y,10,10);
+    if( chamtron.y+20 < 600){
+          if(chamtron.x<0 || chamtron.x+20 > 300) {// Đảo chiều khi chạm thành
+      chamtron.dx = -chamtron.dx;
+      // chamtron.dy = -chamtron.dy;
+    }
+    if(chamtron.y<0 ) { 
+    }
+   if(chamtron.x>nhanvat.x&& chamtron.x<nhanvat.x+50&&chamtron.y==550){
+         chamtron.dy=-chamtron.dy;
+    }
+    chamtron.y+=chamtron.dy;
+      chamtron.x+=chamtron.dx;
+    }else{
+      alert("game over")
+    }
+
+  }
+
+
+
+</script>
+</html> -->
