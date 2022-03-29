@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var nam = prompt("nhap nam ban muon kiem tra")
+    // var nhuan= nam % 4 ==0
+    // if(nhuan){
+    //     alert(nam+"nam nhuan")
+    // } else {
+    //     alert (nam+ " ko nhuan")
+    // }
+    var nhuan = false;
+    var namnhuan= nam%4==0
+    if (namnhuan){
+        var namchiahet100= nam % 100==0
+        if (namchiahet100){
+            var namnchiahet400= nam % 400 ==0
+            if(namchiahet400){
+                nhuan=true;
+            }
+        }else{
+            nhuan=true;
+        }
+            
+        }
+        if(nhuan){
+            alert(nam+ " la nam nhuan")
+        } else{
+            alert(nam + " la nam ko nhuan")
+        }  
+    
+</script>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width=" 200" height="500"></canvas>
+
+</body>
+<script>
+    // function Myday(ts_day,ts_month,ts_year) {
+    //     this.day=ts_day;
+    //     this.month = ts_month;
+    //     this.yaer= ts_year;
+
+
+    //     this.Newday =function(ts_day_new){
+    //         this.day=ts_day_new;
+
+    //     }
+
+    //     this.Newmonth =function(ts_month_new){
+    //         this.month=ts_month_new;
+
+    //     }
+    //     this.Newyear =function(ts_year_new){
+    //         this.yaer=ts_year_new;
+
+    //     }
+    //     this.getday = function(){
+    //         return this.day;
+    //     }
+    //     this.getmonth = function(){
+    //         return this.month;
+    //     }
+    //     this.getyear = function(){
+    //         return this.yaer;
+    //     }
+
+
+
+
+    //      this.say= function(){
+
+    //      }
+    //      this.move= function(){
+
+    //      }
+    //      this.day_month_year = function(){
+    //         console.log('day :'+ this.day)
+    //         console.log('month:'+this.month)
+    //         console.log('year: '+this.yaer)
+    //         console.log("=======================")
+
+    //      }
+    // } 
+
+    //  var Person_1 = new Myday(21,3,2021)
+    //  Person_1.day_month_year ();
+    // Person_1.Newday(20);
+    // Person_1.Newmonth(2);
+    // Person_1.Newyear(2020);
+    // Person_1.day_month_year ();
+    // // var Person_2 = new Person("nguyen van hai", 18)
+    // // console.log(Person_1)
+    // // console.log(Person_2)
+    //================================================(thay đỗi giá trị trong lớp)=============================================================
+    // function Student(ts_name, ts_age, ts_masv, ts_class_name) {
+    //     this.name = ts_name,
+    //         this.age = ts_age,
+    //         this.masv = ts_masv,
+    //         this.class_name = ts_class_name,
+    //         this.getStudent = function () {
+    //             return `Student:
+    //     tên: ${this.name}
+    //     tuổi: ${this.age}
+    //     masv: ${this.masv}
+    //     lớp: ${this.class_name}`;
+    //         }
+    //     this.setStudent = function (ts_name_new, ts_age_new, ts_masv_new, ts_class_name_new) {
+    //         this.name = ts_name_new;
+    //         this.age = ts_age_new;
+    //         this.masv = ts_masv_new;
+    //         this.class_name = ts_class_name_new;
+    //     }
+
+    //     this.Student_1 = function () {
+    //         console.log('name: ' + this.name)
+    //         console.log('age: ' + this.age)
+    //         console.log('masv: ' + this.masv)
+    //         console.log('class name: ' + this.class_name)
+    //         console.log("============================")
+    //     }
+
+
+    // }
+    // var Student1 = new Student("hai", 23, 22202, 17272);
+    // Student1.Student_1();
+    // Student1.setStudent("bon", 25, 222010, 737839);
+    // Student1.Student_1();
+    // console.log(Student1.getStudent());
+    //================================(chèn thẻ canvas)=================================================================
+    var c = document.getElementById('mycanvas');
+    var ctx = c.getContext('2d');
+    ctx.moveTo(0,0);
+    ctx.lineTo(20,0);
+    ctx.lineTo(20,50);
+    ctx.lineTo(40,50);
+    ctx.lineTo(40,0);
+    ctx.lineTo(60,0);
+    ctx.lineTo(60,120);
+    ctx.lineTo(40,120);
+    ctx.lineTo(40,60);
+    ctx.lineTo(20,60);
+    ctx.lineTo(20,120);
+    ctx.lineTo(0,120);
+    ctx.lineTo(0,0);
+    ctx.stroke();
+    var d = document.getElementById('mycanvas');
+    var scc = d.getContext('2d');
+    scc.beginPath();
+    scc.arc(100,100,50,2,1.75* Math.PI);
+    scc.stroke();
+
+
+    // ==============================(tao lop class)==================================
+    // class Myday{
+    //     constructor (ts_day,ts_month,ts_year){
+    //         this.day=ts_day;
+    //     this.month=ts_month;
+    //     this.year=ts_year;
+    //     }
+    //     set_Day_Month_Year(ts_day_new,ts_month_new,ts_year_new){
+    //         this.day=ts_day_new;
+    //         this.month=ts_month_new;
+    //         this.year=ts_year_new;
+    //     }
+    //     get_Day_Month_Year(){
+    //         console.log('ngay : ' + this.day);
+    //         console.log('thang: '+ this.month);
+    //         console.log('nam  : '+ this.year);
+    //     }
+
+        
+    // }
+    // var year1= new Myday("01","03",2002)
+    // year1.get_Day_Month_Year();
+
+</script>
+
+</html>
